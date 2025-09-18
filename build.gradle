@@ -1,0 +1,82 @@
+defaultTasks 'clean', 'test', 'aggregate'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:4.1.14"
+        classpath "net.serenity-bdd:serenity-single-page-report:4.1.14"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+group = 'co.com.pragma'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 16
+targetCompatibility = 16
+
+ext {
+    SERENITY_VERSION = '4.1.14'
+    APPIUM_VERSION = '8.6.0'
+    JUNIT_PLATFORM_LAUNCHER_VERSION = '1.10.2'
+    CUCUMBER_JUNIT_PLATFORM_ENGINE_VERSION = '7.14.0'
+    JUNIT_PLATFORM_SUITE_VERSION = '1.10.2'
+    JUNIT_JUPITER_ENGINE_VERSION = '5.10.2'
+    JUNIT_VINTAGE_ENGINE_VERSION = '5.10.2'
+    SLF4J_API_VERSION = '2.0.9'
+    LOGBACK_CLASSIC_VERSION = '1.4.11'
+    ASSERTJ_CORE_VERSION = '3.23.1'
+    LOMBOK_VERSION = '1.18.32'
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:${SERENITY_VERSION}",
+            "net.serenity-bdd:serenity-cucumber:${SERENITY_VERSION}",
+            "net.serenity-bdd:serenity-screenplay:${SERENITY_VERSION}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${SERENITY_VERSION}",
+            "io.appium:java-client:${APPIUM_VERSION}",
+            "org.slf4j:slf4j-api:${SLF4J_API_VERSION}",
+            "ch.qos.logback:logback-classic:${LOGBACK_CLASSIC_VERSION}"
+
+    testImplementation "org.junit.platform:junit-platform-launcher:${JUNIT_PLATFORM_LAUNCHER_VERSION}",
+            "io.cucumber:cucumber-junit-platform-engine:${CUCUMBER_JUNIT_PLATFORM_ENGINE_VERSION}",
+            "org.junit.platform:junit-platform-suite:${JUNIT_PLATFORM_SUITE_VERSION}",
+            "org.junit.jupiter:junit-jupiter-engine:${JUNIT_JUPITER_ENGINE_VERSION}",
+            "org.junit.vintage:junit-vintage-engine:${JUNIT_VINTAGE_ENGINE_VERSION}",
+            "org.assertj:assertj-core:${ASSERTJ_CORE_VERSION}"
+
+    compileOnly "org.projectlombok:lombok:${LOMBOK_VERSION}"
+    annotationProcessor "org.projectlombok:lombok:${LOMBOK_VERSION}"
+    testCompileOnly "org.projectlombok:lombok:${LOMBOK_VERSION}"
+    testAnnotationProcessor "org.projectlombok:lombok:${LOMBOK_VERSION}"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+    //ignoreFailures = true
+}
+
+serenity {
+    reports = ["single-page-html"]
+    testRoot = "co.com.pragma.certification"
+    requirementsDir = "src/test/resources/features"
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate, reports)
