@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">APP Marvel Animation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="f0c4e5bac8921b93e0507a7ca66929a2438ce9abf745712ced9203fafd61f5a9.html">Sign Up</a></span>
+                > <span class="truncate-60"><a
+                    href="daf04165909bd0aff65ebe5c81c764d4871eeb2f45a7cd4d35610bf1e065aeea.html">Registro con un campo vacio </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="bi bi-chat-text"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 12-09-2025 09:44</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Registro De Usuario </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                YO COMO usuario de la aplicacion Marvel Animation<br />
+QUIERO registrarme<br />
+PARA poder ver el detalle de los personajes de Marvel
+                                </div>
+                            </div>
+
+                            <div class="requirementNarrative">Background: Estar en la aplicación
+                                    <p></p>
+                            </div>
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="0da529150a862eb4a50269914ca613fa86478248214a1cf12d49d1d7eb69ed7f.html">Registro Usuario
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="3ce388ea8511800032930896a3e5ba2c4f80e46f1a10b143b67009baf212c6a0.html">2 To 5 Minutes
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="405e9b9d7b695ee6d88eb4fd4bb79030b4bbc2fe4fe3107690fe072f027800b3.html">Campo Vacio
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="9aaeb2ce3f40e3aa4cf353c286ff0829ffa43d23acdccf2c9432d8d3bab3211e.html">Flujo Negativo
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Registro con un campo vacio
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="9a5e676d88d103243795a1c36d47338ea1ba39585122a40cc0c02e092ffe315c.png" title=" Dado que Usuario no registrado esta en la pagina de Inicio de Sesion de Marvel Animation" width="0"/>
+                <img src="5adbc639b93f9c103112c2f9e3552911a0e922638078a797d69832b9c1a14758.png" title=" Y va a la pagina de Registro" width="0"/>
+                <img src="5adbc639b93f9c103112c2f9e3552911a0e922638078a797d69832b9c1a14758.png" title=" Click on Sign Up button" width="0"/>
+                <img src="5adbc639b93f9c103112c2f9e3552911a0e922638078a797d69832b9c1a14758.png" title=" Usuario no registrado clicks on Sign up button" width="0"/>
+                <img src="5adbc639b93f9c103112c2f9e3552911a0e922638078a797d69832b9c1a14758.png" title=" Click on Sign Up button (completed)" width="0"/>
+                <img src="5adbc639b93f9c103112c2f9e3552911a0e922638078a797d69832b9c1a14758.png" title=" Y va a la pagina de Registro (completed)" width="0"/>
+                <img src="ccb133286bf8de50f304e59d72bf24e1b487bb8ed6909ba3b306ba1966bc75a3.png" title=" Cuando diligencia la informacion de registro
+| Name | Email | Password | Confirm Password | Gender | Terms |
+| Maria | lizeth.rios@pragma.com.co | Maria.2 | Maria.2 |  | S |
+|  | lizeth.rios@pragma.com.co | Maria.2 | Maria.2 | F | S |
+| Pepe |  | Pepe.1 | Pepe.1 | M | S |
+| Maria | lizeth.rios@pragma.com.co |  | Maria.2 | F | S |
+| Pepe | lizeth.rios@pragma.com.co | Pepe.1 |  | M | S |
+| Maria | lizeth.rios@pragma.com.co | Maria.2 | Maria.2 | F | N |" width="0"/>
+                <img src="ccb133286bf8de50f304e59d72bf24e1b487bb8ed6909ba3b306ba1966bc75a3.png" title=" Usuario no registrado sign up" width="0"/>
+                <img src="ccb133286bf8de50f304e59d72bf24e1b487bb8ed6909ba3b306ba1966bc75a3.png" title=" Usuario no registrado clicks on Name field" width="0"/>
+                <img src="2ca536aa16f58e633ff828cbf147174c09b4532ed77e1879f35dd4a6b5da9cee.png" title=" Usuario no registrado enters 'Maria' into Name field" width="0"/>
+                <img src="c56d3e9b8f9be21dfe63e9e48ff82e014787189dddfbb12ecf8e4182f83f12e0.png" title=" Back to the previous page" width="0"/>
+                <img src="9c3f0d1b16337ece37d4ad3f51bddaf262f5ec845071e5ca95cd50d58f7ee2a6.png" title=" Usuario no registrado clicks on Email field" width="0"/>
+                <img src="d57e569796b47ff77e1845e7c43b8628d4f96764fadebc69a538f69fdc6f5a7f.png" title=" Usuario no registrado enters 'lizeth.rios@pragma.com.co' into Email field" width="0"/>
+                <img src="1c2b25a3394a83116798c751b9186e673c2b5158f2a04a4dfc66d50cf0ae0be9.png" title=" Back to the previous page" width="0"/>
+                <img src="8981afa7167288bb4b3866a4a4b950430b569b77178e5a5b7efa12a8a0bb1149.png" title=" Usuario no registrado clicks on Password field" width="0"/>
+                <img src="1d69a0df218a51b28c08ad3e3fe485444d45304e2aca41ddf9b4104dcdf18858.png" title=" Usuario no registrado enters 'Maria.2' into Password field" width="0"/>
+                <img src="c7dcd83812f9ed49d77698d7fa5842969762dd4ed84cd4dd2903361648f27209.png" title=" Back to the previous page" width="0"/>
+                <img src="c9fc443fcaa30c780b3b5e347ffa5ac2df581bb3a4bbe3b733f67bf82a8dc2db.png" title=" Usuario no registrado clicks on Confirm your password field" width="0"/>
+                <img src="b51e23daf83395a93dd6b3d6b75cdb2ed0cbb79b374a8cea7b19c127a1cf5165.png" title=" Usuario no registrado enters 'Maria.2' into Password field" width="0"/>
+                <img src="630ff25fe4f794a3ee9d7f71415769381814ead862d5e7b835f7d1406eb6f7ef.png" title=" Back to the previous page" width="0"/>
+                <img src="9cb5acf8fb48e93641ac33e5a5dd02e5659680ab82aa5575d0b3398fcaab3610.png" title=" Usuario no registrado clicks on Terms check" width="0"/>
+                <img src="c18ebdee5f8b0a22f7bacc86224e13e282f201f887e98bea51f8a39cf4597c65.png" title=" Usuario no registrado clicks on Sign up button" width="0"/>
+                <img src="c18ebdee5f8b0a22f7bacc86224e13e282f201f887e98bea51f8a39cf4597c65.png" title=" Usuario no registrado sign up (completed)" width="0"/>
+                <img src="6720cba9abfa5f0353db64d809beda547a81fddb08161690877e556648b06eb1.png" title=" Usuario no registrado sign up" width="0"/>
+                <img src="6720cba9abfa5f0353db64d809beda547a81fddb08161690877e556648b06eb1.png" title=" Usuario no registrado clicks on Name field" width="0"/>
+                <img src="2934daa13fab69ed21fc949ee276e72903416a1f05843dffe9f23da1f6c5a1b0.png" title=" Usuario no registrado enters '' into Name field" width="0"/>
+                <img src="64dc2d6ef8c692ca3c8f72ebff2604adfb405960dbdfe4b7c278a4e062d64f0c.png" title=" Back to the previous page" width="0"/>
+                <img src="5a4029d77aef3a62091cae4fa47f596b084d76a420ae8930706c4b86c6d1e2ca.png" title=" Usuario no registrado clicks on Email field" width="0"/>
+                <img src="96bd4fd075220af432e7e30ac06a14bfbe356525333a3c0956fbbebfc92e7921.png" title=" Usuario no registrado enters 'lizeth.rios@pragma.com.co' into Email field" width="0"/>
+                <img src="bce16bcf1578a2ac5541de56570066c7ef56931c0b3235cfc3698394ceb65b81.png" title=" Back to the previous page" width="0"/>
+                <img src="d642ad8498861ca04faca26080270154443d11ec55d3be12aa2a39e6b6f9bc83.png" title=" Usuario no registrado clicks on Password field" width="0"/>
+                <img src="75b9319f1f6ac248222e668ab7a1a73cbaf85e98db9824e0c4551b8801ee43c1.png" title=" Usuario no registrado enters 'Maria.2' into Password field" width="0"/>
+                <img src="8fc1f0d746c8e07e8268c09978136afc9bb1c5507946aaf02c2c67613714d4e2.png" title=" Back to the previous page" width="0"/>
+                <img src="1f62ff3da8b3a56a58a1fc1df9b49960a097d1cfcbc48646991a6097a56f984c.png" title=" Usuario no registrado clicks on Confirm your password field" width="0"/>
+                <img src="2141217dcc125d784f0944fa1e40dc19a9d98632e9198e102e29d775bc6ec178.png" title=" Usuario no registrado enters 'Maria.2' into Password field" width="0"/>
+                <img src="3fd54779ca6b6fc2ff292d25ea8e5abbff79ca6ec5b562401014f29402768899.png" title=" Back to the previous page" width="0"/>
+                <img src="9a046e5943cd3916e0bbe138cb067d0f939a333eaafb9ca7b9f0cb8f1cc18dfe.png" title=" Usuario no registrado clicks on Gender field" width="0"/>
+                <img src="f213c201a6bfa28ba8d13601df1a5717b326bb9b760dbeb05845821924050192.png" title=" Usuario no registrado clicks on Gender: F" width="0"/>
+                <img src="4a09664ea1a2ec723c210dcc1bc58ad1aa36dda893571b7c7f50fbb6a12dddd7.png" title=" Usuario no registrado clicks on Sign up button" width="0"/>
+                <img src="4a09664ea1a2ec723c210dcc1bc58ad1aa36dda893571b7c7f50fbb6a12dddd7.png" title=" Usuario no registrado sign up (completed)" width="0"/>
+                <img src="cd7d3a71b6c255d6a67352f3c048a832a624a8d788ddcbb595c2cf5b95031b95.png" title=" Usuario no registrado sign up" width="0"/>
+                <img src="cd7d3a71b6c255d6a67352f3c048a832a624a8d788ddcbb595c2cf5b95031b95.png" title=" Usuario no registrado clicks on Name field" width="0"/>
+                <img src="0f571d845cf7f8b7d1b4386d857097bddea01a03d6d2ad23c92fe3e6f2a8dc58.png" title=" Usuario no registrado enters 'Pepe' into Name field" width="0"/>
+                <img src="ec3d71abfc7206588c6360fa3204fe16047d4554dd2e959f6f6cf521ca23e278.png" title=" Back to the previous page" width="0"/>
+                <img src="8b9019a33aacd31888b360ac75d83ba91a9974b9c06af9dff8e420448af74fd7.png" title=" Usuario no registrado clicks on Email field" width="0"/>
+                <img src="74e46c0ee673948bb00e59822d69d6cf8eb7b4fc547472c55a567196fc36c458.png" title=" Usuario no registrado enters '' into Email field" width="0"/>
+                <img src="aec54c716b6b29a48b3166a06c79f04c42d993a975e878040f76f7a210f48f2f.png" title=" Back to the previous page" width="0"/>
+                <img src="f3dc8cd0ae94b692de30d685c5bd3f8bf08aa35d58e4b8912a1ea61b2b215472.png" title=" Usuario no registrado clicks on Password field" width="0"/>
+                <img src="566f201121e9c4b84caf5af514b36940a9115080724095f9f5fe8fbc647413d9.png" title=" Usuario no registrado enters 'Pepe.1' into Password field" width="0"/>
+                <img src="7d16cd56df22ed19a93c5e72b2e37fb4ca41d76b55aa3021802cc8922383df36.png" title=" Back to the previous page" width="0"/>
+                <img src="658661faa5b9f2ff1b96ddafc68b539a72da062dafa5ade73308aeb8e1cc2971.png" title=" Usuario no registrado clicks on Confirm your password field" width="0"/>
+                <img src="7bba54bc90706f6a9c12006e57f4c53603de7e3eb2c58f807fa4d74d24f8e9e9.png" title=" Usuario no registrado enters 'Pepe.1' into Password field" width="0"/>
+                <img src="777028198938e183248260ba4b95d42bfd33c81bc1ff66a06639dcef785dcf08.png" title=" Back to the previous page" width="0"/>
+                <img src="db0e5f4cfa6c3fb1b00d392fbd1ff0f3da69190d7d7cda9f54781f1a449e380d.png" title=" Usuario no registrado clicks on Gender field" width="0"/>
+                <img src="a347f373c097560465e1bc8bdb1b33be4b88bc86af421ed72a800032dd483c01.png" title=" Usuario no registrado clicks on Gender: M" width="0"/>
+                <img src="c38b411fbdd91776884d5bf0a41a83ba0dcb1d28d6e087fcf49936335271db3f.png" title=" Usuario no registrado clicks on Sign up button" width="0"/>
+                <img src="c38b411fbdd91776884d5bf0a41a83ba0dcb1d28d6e087fcf49936335271db3f.png" title=" Usuario no registrado sign up (completed)" width="0"/>
+                <img src="51990affaa3580f4e9de50e89202d2587ee6df3066473c1cd5c0e4765dcf5b52.png" title=" Usuario no registrado sign up" width="0"/>
+                <img src="51990affaa3580f4e9de50e89202d2587ee6df3066473c1cd5c0e4765dcf5b52.png" title=" Usuario no registrado clicks on Name field" width="0"/>
+                <img src="382f603d387b535ad4db8c6b04dda07374b8962d598922c2dccddcc4b09afa17.png" title=" Usuario no registrado enters 'Maria' into Name field" width="0"/>
+                <img src="0741620d1eca32e300dc2f8ec47c2112bf7380973a9018be1d2ced9ef21c6f22.png" title=" Back to the previous page" width="0"/>
+                <img src="9138e9f23fbe9df3e0019f0bb122ce92628a63502f291e77dcec0a579ffec011.png" title=" Usuario no registrado clicks on Email field" width="0"/>
+                <img src="b1ed035556cf5334366824d361e459072083e4913763327e6493a5989d4a90eb.png" title=" Usuario no registrado enters 'lizeth.rios@pragma.com.co' into Email field" width="0"/>
+                <img src="538397c5f083a4d0ec6732eb5c19766f95b6eea30849c4808bcc99c96d3c7a99.png" title=" Back to the previous page" width="0"/>
+                <img src="cc026c831907397192601bf26f4feda87854af10d1347f9d98f4d45cf4871cae.png" title=" Usuario no registrado clicks on Password field" width="0"/>
+                <img src="9813efb89e2163f8c17f857dbc557b22997dcf261028ed1835e73c06713f33e9.png" title=" Usuario no registrado enters '' into Password field" width="0"/>
+                <img src="d792a6314af44c15f5c89c1689f168a93cd9e01606a54f565df12baf7142832d.png" title=" Back to the previous page" width="0"/>
+                <img src="b323c213ed9bb16246f1c61b0f0d77f543e6d72f25a43e75e75106e73a63edb7.png" title=" Usuario no registrado clicks on Confirm your password field" width="0"/>
+                <img src="12b89c799045cfd36e649e4dc3b2779d93358ad24335da3542f4c48b2341d853.png" title=" Usuario no registrado enters 'Maria.2' into Password field" width="0"/>
+                <img src="8e4ea1838ebfae7067aaf370d2611367a1248df3b44db393d1e1c2cfa35c1a84.png" title=" Back to the previous page" width="0"/>
+                <img src="699c90781577ac05654ac6fb2301a33118d14d9444cb75c0b8af34e60df992de.png" title=" Usuario no registrado clicks on Gender field" width="0"/>
+                <img src="99c78d5cbefe68d92c1c6783eef61ea516bd09273302c1470f45774089008847.png" title=" Usuario no registrado clicks on Gender: F" width="0"/>
+                <img src="e5dee42037a5771bf8a054dc0b42ebf358e8a313cad7107fb9c3206edaa214c1.png" title=" Usuario no registrado clicks on Sign up button" width="0"/>
+                <img src="e5dee42037a5771bf8a054dc0b42ebf358e8a313cad7107fb9c3206edaa214c1.png" title=" Usuario no registrado sign up (completed)" width="0"/>
+                <img src="0b767df55e1b54de0687078b3d0d9cd3be3693734844b738040fea6197f18836.png" title=" Usuario no registrado sign up" width="0"/>
+                <img src="0b767df55e1b54de0687078b3d0d9cd3be3693734844b738040fea6197f18836.png" title=" Usuario no registrado clicks on Name field" width="0"/>
+                <img src="0f571d845cf7f8b7d1b4386d857097bddea01a03d6d2ad23c92fe3e6f2a8dc58.png" title=" Usuario no registrado enters 'Pepe' into Name field" width="0"/>
+                <img src="e6820aca46190140c095dbfc6608dfe6dab68c0b08650f65839d38c4cf0500aa.png" title=" Back to the previous page" width="0"/>
+                <img src="1d9bfd129e36f2e4d24a1c36f0f7a2a28500ea0cff219ebfad2a76d075e967c1.png" title=" Usuario no registrado clicks on Email field" width="0"/>
+                <img src="ee03baac915808f8a9cdc5ed76a7e08cb3d5a2fa80a732e48c48b771028ba428.png" title=" Usuario no registrado enters 'lizeth.rios@pragma.com.co' into Email field" width="0"/>
+                <img src="c0a0ede61aece15e1038668d5d6311e9b850d51c987acb23b395a8d1c8ab48bd.png" title=" Back to the previous page" width="0"/>
+                <img src="622069e5885ee76542806b659dd2ed7b5be1d19bc4048235cec00225bfc2922b.png" title=" Usuario no registrado clicks on Password field" width="0"/>
+                <img src="aebc52572c373f29c79a4a74bd57ac8a3dfa22828a79c8be9af40a1778b0ee48.png" title=" Usuario no registrado enters 'Pepe.1' into Password field" width="0"/>
+                <img src="3e150250e3dff90120759f84cb84912ac5862479087a31eaf2e6e72a522115a1.png" title=" Back to the previous page" width="0"/>
+                <img src="404910af30b4ac552c082952a1dacc51d4be05394af425eb4293ffc5d1dc8338.png" title=" Usuario no registrado clicks on Confirm your password field" width="0"/>
+                <img src="844f228ccd835a7858f3f4709c2a1aa07b29dcefc369bb240d53bb3e9367e51c.png" title=" Usuario no registrado enters '' into Password field" width="0"/>
+                <img src="6f122ac583d3d0a85ac5ce72c21faf8c8cf40c1d52e4f848512882a8a6729498.png" title=" Back to the previous page" width="0"/>
+                <img src="31cd743418952771d5c6cd55ddab8f30ea19864f7dddb7077d33cd0c6a75da25.png" title=" Usuario no registrado clicks on Gender field" width="0"/>
+                <img src="c325e9679fe4e3c1e935ae38e9cd89a6f21a7e79f43b91c35832522f62458fe8.png" title=" Usuario no registrado clicks on Gender: M" width="0"/>
+                <img src="3ad8cca63f3535a73e34f3c6cce672831fb1d0e704b4b31cc8d82a74e373c77b.png" title=" Usuario no registrado clicks on Sign up button" width="0"/>
+                <img src="3ad8cca63f3535a73e34f3c6cce672831fb1d0e704b4b31cc8d82a74e373c77b.png" title=" Usuario no registrado sign up (completed)" width="0"/>
+                <img src="51e5f5148a8399a8d7c059b928659239a66308500fb784b01e92a5afce67b972.png" title=" Usuario no registrado sign up" width="0"/>
+                <img src="51e5f5148a8399a8d7c059b928659239a66308500fb784b01e92a5afce67b972.png" title=" Usuario no registrado clicks on Name field" width="0"/>
+                <img src="da710bcc9bfbedd5c2b46bf4c7b2d374eac8e3e8ff20d6e15153e62df77ac9dd.png" title=" Usuario no registrado enters 'Maria' into Name field" width="0"/>
+                <img src="64d4507edf34cc4a053d3c8c0f1c9b0e0507aebcde95323bca47b4d7240d02ed.png" title=" Back to the previous page" width="0"/>
+                <img src="3d08ccb7b422025655daf8a30877b56622400587f617976b7223ac5a58ed66e7.png" title=" Usuario no registrado clicks on Email field" width="0"/>
+                <img src="d57e569796b47ff77e1845e7c43b8628d4f96764fadebc69a538f69fdc6f5a7f.png" title=" Usuario no registrado enters 'lizeth.rios@pragma.com.co' into Email field" width="0"/>
+                <img src="4ea9304369c5b9f3c5139ad3c4969babce73dc08c9071a4ca3eaa3dbf6700ac3.png" title=" Back to the previous page" width="0"/>
+                <img src="92003df7a5dd870ab9835393fe82e9d199da7f972f0f6e714a43692a584ebb36.png" title=" Usuario no registrado clicks on Password field" width="0"/>
+                <img src="61c808557048cc6c3e834c57f70339a6f7f45c5048962a74e2ddfc82ecbfcbf4.png" title=" Usuario no registrado enters 'Maria.2' into Password field" width="0"/>
+                <img src="3c71e5521a78b7d63c82ccf4d97e1f657eb2971082d0effc93f2ad9be7e534cb.png" title=" Back to the previous page" width="0"/>
+                <img src="52a9cef627109fb2256b5bc4cb91bdf48e283b680566e213d3c2de610eb55a56.png" title=" Usuario no registrado clicks on Confirm your password field" width="0"/>
+                <img src="43c94980e007d0bcc498d7946e886e72a59e9ba2c7770c709e116e7a1b8c589a.png" title=" Usuario no registrado enters 'Maria.2' into Password field" width="0"/>
+                <img src="4dab940291ca6f7608a8ca471df101421a95eb76bcd294b7775b7da21f4e2b7d.png" title=" Back to the previous page" width="0"/>
+                <img src="8711efc9328090e1f9240b93d80c22e633c1a11f86120fab21264c184421596a.png" title=" Usuario no registrado clicks on Gender field" width="0"/>
+                <img src="d236584a61a10e901c3891e24fca0155d91e920af1e9d0f51a868bb9bcb5363b.png" title=" Usuario no registrado clicks on Gender: F" width="0"/>
+                <img src="dff409f0a16af8aef187f719ee38725b6f31fd4564c49404d33f171d73f90ae7.png" title=" Usuario no registrado clicks on Terms check" width="0"/>
+                <img src="a4fdc1c1757f6d833770494b79d8f4de5fc62b3f053ca4df60511b4086b3b08d.png" title=" Usuario no registrado clicks on Sign up button" width="0"/>
+                <img src="ed5eecb5e94e0e04af866f87141dfd7b20339d3b4e5b2ec94d8243d325ef583e.png" title=" Usuario no registrado sign up (completed)" width="0"/>
+                <img src="ed5eecb5e94e0e04af866f87141dfd7b20339d3b4e5b2ec94d8243d325ef583e.png" title=" Cuando diligencia la informacion de registro
+| Name | Email | Password | Confirm Password | Gender | Terms |
+| Maria | lizeth.rios@pragma.com.co | Maria.2 | Maria.2 |  | S |
+|  | lizeth.rios@pragma.com.co | Maria.2 | Maria.2 | F | S |
+| Pepe |  | Pepe.1 | Pepe.1 | M | S |
+| Maria | lizeth.rios@pragma.com.co |  | Maria.2 | F | S |
+| Pepe | lizeth.rios@pragma.com.co | Pepe.1 |  | M | S |
+| Maria | lizeth.rios@pragma.com.co | Maria.2 | Maria.2 | F | N | (completed)" width="0"/>
+                <img src="ed5eecb5e94e0e04af866f87141dfd7b20339d3b4e5b2ec94d8243d325ef583e.png" title=" Entonces deberia ver la alerta con el mensaje &quot;All fields are required&quot;" width="0"/>
+                <img src="ed5eecb5e94e0e04af866f87141dfd7b20339d3b4e5b2ec94d8243d325ef583e.png" title=" Then the alert" width="0"/>
+
+                <img src="ed5eecb5e94e0e04af866f87141dfd7b20339d3b4e5b2ec94d8243d325ef583e.png" title=" Entonces deberia ver la alerta con el mensaje "All fields are required" (completed): <span class='success-color'>SUCCESS</span>" width="0"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 4.1.14</span>
+</div>
+</body>
+</html>
